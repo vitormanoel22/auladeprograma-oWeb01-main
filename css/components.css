@@ -29,4 +29,5 @@ a:focus, button:focus, input:focus, textarea:focus {
 .toast.show {
   opacity: 1;
   transform: translateY(0);
+  
 }

@@ -115,4 +115,8 @@
 
 @media (max-width: 480px){
   .brand { font-size: var(--font-size-base); }
+
+  .input-error { border-color: var(--color-danger); box-shadow: 0 0 0 3px rgba(176,42,55,0.08); }
+.saved-item { padding: 0.75rem; background: #fff; border:1px solid var(--color-neutral-300); }
+
 }
