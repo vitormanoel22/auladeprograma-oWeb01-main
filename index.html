@@ -1,166 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>ONG Pet — Cadastro de Usuário</title>
-
-  <!-- Estilos principais -->
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/design-system.min.css" />
-<link rel="stylesheet" href="css/layout.min.css" />
-<link rel="stylesheet" href="css/components.min.css" />
-<!-- opcional: acessibilidade extra -->
-<link rel="stylesheet" href="css/acessibilidade.css" />
-<link rel="stylesheet" href="style.css">
-
-
-</head>
-<body>
-  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo</a>
-
-<a href="#main-content" class="skip-link">Ir para o conteúdo principal</a>
-
-  <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-<header class="site-header" role="banner">
-  <a href="#conteudo-principal" class="skip-link">Ir para o conteúdo principal</a>
-
-  <div class="container header-inner">
-    <a class="brand" href="index.html">ONG Pet</a>
-
-    <button class="nav-toggle" aria-controls="main-nav" aria-expanded="false">
-      <span class="sr-only">Abrir menu de navegação</span>
-      <span class="hamburger"></span>
-    </button>
-
-    <div class="theme-switcher">
-      <button id="theme-light" aria-label="Modo Claro">Claro</button>
-      <button id="theme-dark" aria-label="Modo Escuro">Escuro</button>
-      <button id="theme-contrast" aria-label="Alto Contraste">Alto Contraste</button>
-    </div>
-
-    <nav id="main-nav" class="main-nav" aria-label="Menu principal">
-      <ul class="nav-list">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#cadastro">Cadastro</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+<h3 id="proj1">Resgates</h3>
+<p>Atuação emergencial para resgatar animais em situação de risco.</p>
+<span class="badge">Ativo</span>
+</article>
+<article class="card" aria-labelledby="proj2">
+<h3 id="proj2">Clínica Móvel</h3>
+<p>Atendimentos e castrações comunitárias.</p>
+<span class="badge badge-secondary">Em planejamento</span>
+</article>
+<article class="card" aria-labelledby="proj3">
+<h3 id="proj3">Adoção Responsável</h3>
+<p>Processo de adoção com triagem e suporte ao adotante.</p>
+<span class="badge">Aberto</span>
+</article>
+</div>
+</section>
 
 
-<main id="conteudo-principal">
+<section id="cadastro" class="container">
+<h2>Cadastro de Voluntário / Contato</h2>
 
-    <section class="hero container">
-      <div class="hero-content">
-        <h1>Usuários da ONG</h1>
-        <p class="lead">
-          Somos uma organização sem fins lucrativos que atua com animais abandonados — resgate, cuidado e adoção responsável.
-        </p>
-        <a class="btn btn-primary" href="#cadastro">Quero Ajudar</a>
-      </div>
 
-      <div class="hero-media">
-        <img src="imagens/cachorro.svg" alt="Ilustração de voluntários ajudando animais">
-      </div>
-    </section>
+<form id="form-cadastro" class="form" novalidate aria-describedby="form-instrucoes">
+<p id="form-instrucoes" class="sr-only">Todos os campos obrigatórios devem ser preenchidos. Use TAB para navegar.</p>
 
-    <section id="projetos" class="container grid projects-section">
-      <h2>Projetos</h2>
 
-      <div class="cards">
+<div class="form-row">
+<label for="nome">Nome completo</label>
+<input id="nome" name="nome" type="text" required minlength="3" aria-required="true" aria-invalid="false" />
+<div class="form-feedback" aria-live="polite"></div>
+</div>
 
-        <article class="card" aria-labelledby="proj1">
-          <h3 id="proj1">Resgates</h3>
-          <p>Atuação emergencial para resgatar animais em situação de risco.</p>
-          <span class="badge">Ativo</span>
-        </article>
 
-        <article class="card" aria-labelledby="proj2">
-          <h3 id="proj2">Clínica Móvel</h3>
-          <p>Atendimentos e castrações comunitárias.</p>
-          <span class="badge badge-secondary">Em planejamento</span>
-        </article>
+<div class="form-row">
+<label for="email">Email</label>
+<input id="email" name="email" type="email" required aria-required="true" aria-invalid="false" />
+<div class="form-feedback" aria-live="polite"></div>
+</div>
 
-        <article class="card" aria-labelledby="proj3">
-          <h3 id="proj3">Adoção Responsável</h3>
-          <p>Processo de adoção com triagem e suporte ao adotante.</p>
-          <span class="badge">Aberto</span>
-        </article>
 
-      </div>
-    </section>
+<div class="form-row">
+<label for="mensagem">Mensagem</label>
+<textarea id="mensagem" name="mensagem" rows="4" aria-invalid="false"></textarea>
+<div class="form-feedback" aria-live="polite"></div>
+</div>
 
-    <section id="cadastro" class="container">
-      <h2>Cadastro de Voluntário / Contato</h2>
 
-      <form id="form-cadastro" class="form" novalidate aria-describedby="instrucao-form">
-        <p id="instrucao-form" class="sr-only">
-          Preencha nome, email e mensagem para enviar seu contato.
-        </p>
+<div class="form-actions">
+<button class="btn btn-primary" type="submit">Enviar</button>
+<button class="btn" type="reset">Limpar</button>
+</div>
+</form>
 
-        <div class="form-row">
-          <label for="nome">Nome completo</label>
-          <input id="nome" name="nome" type="text" required minlength="3" aria-required="true"/>
-          <div class="form-feedback" aria-live="polite"></div>
-        </div>
 
-        <div class="form-row">
-          <label for="email">Email</label>
-          <input id="email" name="email" type="email" required aria-required="true"/>
-          <div class="form-feedback" aria-live="polite"></div>
-        </div>
+<div id="saved-entries" aria-live="polite"></div>
+</section>
 
-        <div class="form-row">
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="4"></textarea>
-        </div>
 
-        <div class="form-actions">
-          <button class="btn btn-primary" type="submit">Enviar</button>
-          <button class="btn" type="reset">Limpar</button>
-        </div>
-      </form>
-    </section>
+<section id="contato" class="container contact">
+<h2>Contato com ONG Pet</h2>
+<address>
+<p>Endereço: Rua Esperança, 9 - Parque Residencial Bambi - Guarulhos/SP</p>
+<p>Telefone: (11) 98765-4321</p>
+<p>Email: <a href="mailto:contato@ongpet.org.br">contato@ongpet.org.br</a></p>
+</address>
+</section>
 
-    <section id="contato" class="container contact">
-      <h2>Contato com ONG Pet</h2>
-      <address>
-        <p>Endereço: Rua Esperança, 9 - Parque Residencial Bambi - Guarulhos/SP</p>
-        <p>Telefone: (11) 98765-4321</p>
-        <p>Email: <a href="mailto:contato@ongpet.org.br">contato@ongpet.org.br</a></p>
-      </address>
-    </section>
 
-    <!-- SPA - Conteúdo dinâmico -->
-    <div id="app" class="container" aria-live="polite"></div>
+</main>
 
-  </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 ONG Pet. Todos os direitos reservados.</p>
-    </div>
-  </footer>
+<footer class="site-footer" role="contentinfo">
+<div class="container">
+<p>&copy; 2025 ONG Pet. Todos os direitos reservados.</p>
+</div>
+</footer>
 
-  <!-- Toast de feedback -->
-  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <!-- JS -->
-  <script src="js/templates.js" type="module"></script>
-  <script src="js/store.js" type="module"></script>
-  <script src="js/formValidation.min.js" type="module"></script>
-  <script src="js/ui.js" type="module"></script>
-  <script src="js/router.js" type="module"></script>
-  <script src="js/app.js" type="module"></script>
-  <script src="js/main.min.js"></script>
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+
+<script src="js/main.min.js"></script>
+<script src="js/formValidation.min.js" type="module"></script>
 <script src="js/theme.min.js"></script>
-<script src="script.js"></script>
-
-
-
+<script src="js/script.js"></script>
+<script src="js/store.js" type="module"></script>
+<script src="js/ui.js" type="module"></script>
 </body>
 </html>
-
