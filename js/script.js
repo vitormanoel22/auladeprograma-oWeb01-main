@@ -1,30 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navToggle = document.querySelector('.nav-toggle');
-  const mainNav = document.getElementById('main-nav');
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector(".nav-toggle");
+  const mainNav = document.getElementById("main-nav");
 
-  // Acessibilidade básica
-  navToggle.setAttribute('aria-expanded', 'false');
+  function openMenu() {
+    mainNav.classList.add("open");
+    navToggle.setAttribute("aria-expanded", "true");
 
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-    mainNav.classList.toggle('open');
+    // bloqueia rolagem
+    document.body.style.overflow = "hidden";
+
+    // envia foco para o 1º link
+    const firstLink = mainNav.querySelector("a");
+    if (firstLink) firstLink.focus();
+  }
+
+  function closeMenu() {
+    mainNav.classList.remove("open");
+    navToggle.setAttribute("aria-expanded", "false");
+
+    // libera rolagem
+    document.body.style.overflow = "";
+
+    // retorna foco ao botão
+    navToggle.focus();
+  }
+
+  navToggle.addEventListener("click", () => {
+    const expanded = navToggle.getAttribute("aria-expanded") === "true";
+    expanded ? closeMenu() : openMenu();
   });
 
-  // Fecha com tecla ESC
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') {
-      mainNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.focus();
+  // Fecha no ESC
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
     }
   });
 
-  // Fecha menu ao clicar em um link
-  document.querySelectorAll('.nav-list a').forEach(link => {
-    link.addEventListener('click', () => {
-      mainNav.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
+  // Fecha ao clicar em um link
+  document.querySelectorAll(".nav-list a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 });
