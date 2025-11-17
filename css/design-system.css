@@ -2,6 +2,25 @@
 /*  SISTEMA DE DESIGN ACESSÍVEL   */
 /*  WCAG 2.1 AA                    */
 /* ------------------------------ */
+
+/* Tema Escuro */
+:root.dark {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-text: #ffffff;
+  --color-primary: #58a6ff;
+  --color-neutral-300: #2d333b;
+}
+
+/* Alto Contraste */
+:root.high-contrast {
+  --color-bg: #000000;
+  --color-text: #ffffff;
+  --color-primary: #ffff00;
+  --color-secondary: #00ffff;
+  --color-neutral-300: #ffffff;
+}
+
 :root.theme-dark {
   --color-bg: #121212;
   --color-surface: #1e1e1e;
