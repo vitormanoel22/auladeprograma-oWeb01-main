@@ -1,3 +1,5 @@
+<main id="main-content" tabindex="-1">
+
 document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.getElementById('main-nav');
