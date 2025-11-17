@@ -57,6 +57,22 @@ function onSubmit(e) {
     setFeedback(form.nome, 'Nome não pode conter números.');
     valid = false;
   }
+function setFeedback(inputEl, message) {
+  const row = inputEl.closest('.form-row');
+  const fb = row.querySelector('.form-feedback');
+  
+  const fbId = inputEl.id + "-feedback";
+  fb.id = fbId;
+  inputEl.setAttribute("aria-describedby", fbId);
+
+  fb.textContent = message;
+  fb.setAttribute("role", "alert");
+  fb.setAttribute("aria-live", "assertive");
+
+  inputEl.focus();
+  inputEl.classList.add('input-error');
+  setTimeout(() => inputEl.classList.remove('input-error'), 800);
+}
 
   if (!validateEmail(email)) {
     setFeedback(form.email, 'Informe um email válido (ex: nome@dominio.com).');
