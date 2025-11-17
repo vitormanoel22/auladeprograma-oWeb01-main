@@ -85,6 +85,9 @@ body.high-contrast select:focus {
   max-width: 260px;
   font-size: var(--font-size-sm);
 }
+body.menu-open {
+  overflow: hidden;
+}
 
 /* Animação de entrada */
 .toast.show {
